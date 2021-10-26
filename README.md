@@ -1,2 +1,5 @@
 # MicroServices-Lab
-Lab programs 
+
+Initializer : `https://start.spring.io/`
+
+Run Command : `./mvnw spring-boot:run`
