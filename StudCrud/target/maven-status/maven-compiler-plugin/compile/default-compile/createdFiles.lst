@@ -1,0 +1,5 @@
+com/example/StudCrud/StudCrudApplication.class
+com/example/StudCrud/repository/StudRepository.class
+com/example/StudCrud/model/Stud.class
+com/example/StudCrud/service/StudService.class
+com/example/StudCrud/controller/StudController.class
