@@ -1,0 +1,23 @@
+#give app name as : appname followed by last three digits of your usn
+# for eg. 1ms99cs001 -> appname001
+# give port name : digit 9 follwed by last three digits of your usn
+# for eg 1ms99cs001 -> 9001
+
+docker build -t nodeapp .
+docker tag nodeapp cserit/nodeapp
+docker login
+docker push cserit/nodeapp
+kubectl create deployment nodeapp046 --image=gv71/nodeapp046
+kubectl get deployment nodeapp046
+kubectl get pods | grep '^nodeapp046'
+kubectl expose deployment nodeapp046 --type=LoadBalancer --port=8080
+kubectl get service nodeapp046
+# to run open browser
+http://172.1.14.168:<node_port>/index.html
+
+
+
+kubectl delete service nodeapp
+kubectl delete deployment nodeapp
+kubectl delete --all pods
+#kubectl expose deployment/nodeapp --type="NodePort" --port 8080
